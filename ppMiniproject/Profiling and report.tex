@@ -1,0 +1,56 @@
+
+\documentclass{article}
+\usepackage{graphicx}
+\title{\textbf{\underline{Java Banking Application Profiling and Report}}}
+\author{Abhishek Kanade}
+
+\begin{document}
+
+\maketitle
+
+
+\section{Introduction}
+This report analyzes a Java code snippet for a simple banking application. The code provides basic functionality for managing customer accounts, including account creation, account details display, deposit, withdrawal, and transaction history. It uses MySQL as the underlying database for data storage and retrieval.
+\section{Aim}
+The purpose of the provided program is to create a basic command-line banking application in Java. The aim is to demonstrate the implementation of core banking functionalities, such as creating customer accounts, managing account details, making deposits and withdrawals, and tracking transaction history. This program serves as a simplified example of how a banking system can be developed using Java and a relational database (MySQL). It is intended to showcase fundamental concepts of database connectivity, SQL query execution.
+
+\section{Code Overview}
+
+\subsection{Customer Class}
+The `Customer` class is the core of the application and provides methods for various banking operations. It interacts with the database and allows customers to manage their accounts.
+
+\subsubsection{Create New Account (\texttt{get\_account} method)}
+This method allows customers to create a new bank account. It collects essential information, such as name, phone number, PAN card number, PIN, account type, and initial deposit. A new row is inserted into the `Bank\_cus` table, and a transaction history table is created for the account.
+
+\subsubsection{Show Customer Details (\texttt{Show\_details} method)}
+Customers can view their account details by providing the account number. This method retrieves and displays information such as the customer's name, account type, phone number, PAN card number, and current balance.
+
+\subsubsection{Deposit Money (\texttt{deposit} method)}
+Customers can deposit money into their accounts using this method. It requires the account number and PIN for security verification. The amount is added to the balance, and a transaction entry is recorded in the respective transaction history table.
+
+\subsubsection{Withdraw Money (\texttt{withdraw} method)}
+Similar to the deposit method, this function allows customers to withdraw money from their accounts. It performs security verification, subtracts the withdrawal amount from the balance, and records the transaction.
+
+\subsubsection{Show Transaction History (\texttt{Show\_transition} method)}
+Customers can view their transaction history by providing the account number and PIN. This method retrieves transaction data from the corresponding transaction history table and displays it in a tabular format.
+
+\subsection{Bank Class (Main)}
+The `Bank` class serves as the entry point of the program. It establishes a database connection and creates an instance of the `Customer` class to interact with the banking system's functionality. Users are presented with a menu to choose from the available banking operations.
+
+\subsection{Database Connectivity}
+The code connects to a MySQL database using JDBC, specifying the database URL, username, and password.
+
+\subsection{Menu and User Interaction}
+The program provides a menu where users can select operations by entering a corresponding number.
+
+\section{Conclusion}
+The provided Java code offers a simplified implementation of a banking system. It allows customers to create accounts, view account details, deposit and withdraw money, and check their transaction history. However, in a real-world scenario, it is essential to implement more robust security and error-handling mechanisms. Additionally, improvements can be made in areas such as using constants for database table names and optimizing SQL queries.
+
+\section{Profile}
+This java application code is Profiled by Jprofiler for  graphical overview of code\\
+\\
+\textbf{Call Graph}
+\[
+  \includegraphics[width=1.0\textwidth]{Screenshot (31).png}
+\]
+\end{document}
